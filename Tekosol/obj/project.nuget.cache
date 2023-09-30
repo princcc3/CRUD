@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C4i6y+gwqUnXlpTaEM8i919/LKG6rSDCng3dI5+mwyg2/qfLuA4AqfXt0Aqglh79vnGSm6FtEg9QK//u6pQcPw==",
+  "dgSpecHash": "xXcCw8TCDpaxQS/e/xJoF8XhXMzBf4QcwyIMO75p8lXbIbLPieN1hzjl+CZSdjhQlRnUXscIpXkRgb/E5389Vg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ACER\\Documents\\Projects\\Tekosol\\Tekosol\\Tekosol.csproj",
+  "projectFilePath": "C:\\git\\Tekosol\\Tekosol\\Tekosol.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

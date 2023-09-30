@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ACER\\Documents\\Projects\\Tekosol\\Tekosol\\Tekosol.csproj": {}
+    "C:\\git\\Tekosol\\Tekosol\\Tekosol.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ACER\\Documents\\Projects\\Tekosol\\Tekosol\\Tekosol.csproj": {
+    "C:\\git\\Tekosol\\Tekosol\\Tekosol.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ACER\\Documents\\Projects\\Tekosol\\Tekosol\\Tekosol.csproj",
+        "projectUniqueName": "C:\\git\\Tekosol\\Tekosol\\Tekosol.csproj",
         "projectName": "Tekosol",
-        "projectPath": "C:\\Users\\ACER\\Documents\\Projects\\Tekosol\\Tekosol\\Tekosol.csproj",
+        "projectPath": "C:\\git\\Tekosol\\Tekosol\\Tekosol.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ACER\\Documents\\Projects\\Tekosol\\Tekosol\\obj\\",
+        "outputPath": "C:\\git\\Tekosol\\Tekosol\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

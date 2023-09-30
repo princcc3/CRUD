@@ -21,7 +21,7 @@ namespace MyEmployee.Controller
         {
             _config = config;
         }
-        [Authorize(Policy = "TokenRequirement")]
+
         //To get all employee details
         [HttpGet]
         public async Task<ActionResult<List<Employee>>> GetAllEmployees()

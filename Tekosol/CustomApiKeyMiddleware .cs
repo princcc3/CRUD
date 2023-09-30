@@ -1,37 +1,39 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
+﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
 
-namespace Tekosol
+public class CustomApiKeyMiddleware
 {
-    public class TokenRequirement : IAuthorizationRequirement { }
-    public class TokenRequirementHandler : AuthorizationHandler<TokenRequirement>
+    private readonly IConfiguration Configuration;
+    private readonly RequestDelegate _next;
+    const string API_KEY = "Api_Key";
+    public CustomApiKeyMiddleware(RequestDelegate next,
+    IConfiguration configuration)
     {
-        private readonly IHttpContextAccessor _contextAccessor;
-        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, TokenRequirement requirement)
+        _next = next;
+        Configuration = configuration;
+    }
+    public async Task Invoke(HttpContext httpContext)
+    {
+        var token = httpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+        Console.WriteLine(token);
+        if (token == null)
         {
-            var httpContext = this._contextAccessor.HttpContext;
-            var token = httpContext.Request.Headers["Authorzation"].FirstOrDefault()?.Split(" ").Last();
-            
-            if(token == null)
+            httpContext.Response.StatusCode = 401;
+            await httpContext.Response.WriteAsync("The Api Key for accessing this endpoint is not available");
+            return;
+        }
+        else
+        {
+            if (token == "thisisthetoken")
             {
-                context.Fail();
-                return Task.CompletedTask;
+                await _next(httpContext);
             }
             else
             {
-                if(token == "thisisthetoken")
-                {
-                    context.Succeed(requirement);
-                    return Task.CompletedTask;
-                }
+                httpContext.Response.StatusCode = 401;
+                await httpContext.Response.WriteAsync("The authentication key is incorrect : Unauthorized access");
+                return;
             }
-            throw new NotImplementedException();
         }
-        public TokenRequirementHandler(IHttpContextAccessor contextAccessor)
-        {
-            this._contextAccessor = contextAccessor;
-
-        }
+        await _next(httpContext);
     }
 }
